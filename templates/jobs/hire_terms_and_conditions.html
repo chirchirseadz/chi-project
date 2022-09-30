@@ -1,0 +1,79 @@
+{% extends "partials/base.html" %}  
+{% load crispy_forms_tags %}
+
+{% block title %} Hire Terms and Condtitons {% endblock%}
+
+{% block content %}
+
+
+
+
+
+
+<style>
+    #container{
+        margin-top: 2%;
+    }
+    #top{
+        padding:2%;
+    }
+    @media only screen and  (max-width: 600px) {
+        #container{
+        margin-top: 2%;
+    }
+    }
+
+</style>
+
+<div id="container" class="row" data-aos="fade-up">
+    
+    <div class="col-md-2"></div>
+    <div class="col-md-9">
+        {% if messages %}
+        <div class="form-group">
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="alert alert-danger">
+                    {{message}}
+                </div>
+                {% endif %}
+                {% if message.tags == "success" %}
+                <div class="alert alert-success">
+                    {{message}}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="card">
+            <div id="top" class=" bg-success text-white">
+                <h6>Agree on the Terms and conditions For Hiring</h6> 
+            </div>
+            <div class="row p-3">
+                <div class="col-md-12">
+                    <form method="POST">
+                        {% csrf_token %} 
+                        {% for field in terms_and_conditions %}
+                        <div class="field-control">
+                            {{field}}
+                            <label class="text-dark p-2">Check The Terms and Condtitons</label>
+                        </div>
+                            
+                        {% endfor %}
+                        <br>
+                        <input type="submit" class="btn btn-primary  " name="submit" value="Proceed To Hire Talent "><br>
+ 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+{% endblock %}
+
+
+
+

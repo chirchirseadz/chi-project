@@ -1,0 +1,173 @@
+{% extends 'partials/base.html' %}
+{% block title %} Home-Chi-square {% endblock %}
+{% block content %} 
+{% load static %}
+{% include 'partials/navbar.html' %}
+
+<div class="row mt-3">
+  {% include 'partials/corousel.html' %}
+</div>
+{% include 'partials/middle.html' %}
+<center id="image" class="mt-5">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <img id="item-img" class="img-thumbnail " src="{% static 'assets/img/home1.png' %}" alt="profile-image">
+  </div>
+  <div class="col-md-4"></div>
+    
+
+</center>
+
+<style>
+
+  #item-img{
+    margin-top: 2;
+    width: 100%;
+    height: 20vh;
+   
+  }
+  @media only screen and  (max-width: 600px) {
+    #image{
+     margin-bottom: 60%;
+    
+      
+    }
+    #item-img{
+    margin-top: 2;
+    width: 0%;
+    height: 10vh;
+   }}
+  @media only screen and (width:768px) and (resolution: 163dpi) {
+    #img {
+      width: 100%;
+      
+      
+    }
+    #item-img{
+      width: 100%;
+      margin-left: 0%;
+      
+    }
+}
+  @media only screen and  (max-width: 600px) {
+    #img {
+      width: 100%;
+    
+      
+    }
+    #item-img{
+      width: 100%;
+      margin-left: 0%;
+      
+    }
+    #main{
+      transform: translateY(-20%);
+    }
+    #footer{
+      transform: translateY(-15%);
+    }
+    #services{ 
+    display: none;
+    opacity: 0;
+    transform: translateY();
+  }
+  #row{
+    display: none;
+    transform: translateY(-1000px);
+    
+  }
+  #section{
+    padding: 0;
+    
+  }
+  #talents{
+          height: 0px;
+        }
+        ul ,li {
+          list-style: none;
+          
+        }
+    .header{
+      margin-bottom: 30%;
+    }
+}
+#home1img{
+        margin-top: 5%;
+        margin-bottom: 5%;
+        margin-left: 37%;
+        
+
+    }
+    #img{
+     width: 50%; 
+     margin: 0 auto;
+     margin-left: -11%;
+    
+    }
+    
+
+  
+    @media only screen and  (max-width: 900px) { 
+    
+    #img{
+      display: block;
+     width: 100%; 
+     margin-left: 0;
+     height: 50vh;
+    }
+    
+
+    }
+
+</style>
+  <main class="main" id="main">
+    
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us" data-aos="fade-up" >
+      <div class="container" data-aos="fade-up">
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h3>WHY YOU SHOULD WORK WITH CHI-SQUARE</h3>
+            <ul>
+              <li><i class="ri-check-double-line text-primary"></i> We do head hunting of our referrals. People who have been tested and confirmed excellent for a specific field</li>
+              <li><i class="ri-check-double-line text-primary"></i> By Chi-Square Connections extensive database of temporary candidates, your company will pay for highly skilled resources and productive time only, thanks to our attendance, productivity and performance management systems. </li>
+              <li><i class="ri-check-double-line text-primary"></i> We understand Payment delays can hurt your good reputation with your workforce. We are willing to manage your temporary employee payment as you chase the delays.</li>           
+            </ul>
+            
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <h4>
+              Why your business should consider using temporary staff
+            </h4>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Keep up with changing demand. Technology is ever changing and you may not keep up with your permanent employees, temporary contracting is the way to go.</li>
+              <li><i class="ri-check-double-line"></i> Make smart staffing decisions. Unfortunately, the peak staff demand will taper off eventually. This conundrum leaves you with a choice of overtaxing your core staff or hiring team members you will need to lay off. Layoffs are bad for the organization, bad for those let go and bad for those left behind. Why take this hit to company morale and reputation if it’s not necessary?</li>
+              <li><i class="ri-check-double-line"></i> Supplementing professional staff to give management adequate time to prepare new initiatives i.e. launching special projects until permanent staffing needs is determined. </li>
+              <li><i class="ri-check-double-line"></i> Supplementing temporary IT specialist staff during busy periods. </li>
+              <li><i class="ri-check-double-line"></i> You obtain higher candidate levels utilizing permanent placement techniques and combining the roles.  </li>
+              
+            </ul>
+            <!-- <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p> -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End About Us Section -->
+
+
+  </main>
+  
+
+
+</body>
+<div id="footer">
+  {% include 'partials/footer.html' %}
+</div>
+
+
+{% endblock %} 

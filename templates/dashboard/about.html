@@ -1,0 +1,190 @@
+{% extends "partials/base.html" %}  
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %} About us  page  {% endblock%}
+
+{% block content %}
+{% include 'partials/navbar.html' %}
+
+<style>
+ 
+  @media only screen and  (max-width: 800px) {
+     .breadcrumbs{
+      margin-top: 30%;
+     }
+ }
+ #h3{
+      font-size: 160%;
+    }
+</style>
+<body>
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li><a href="{% url 'landing_page' %}">Home</a></li>
+            <li>About</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    
+    <!-- End Breadcrumbs -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up">
+        <div class="row content">
+          
+          <div class="col-lg-12">
+            <center >
+              <h2 id="h3" class="text-warning" data-aos="fade-left"><span class="text-dark"><span ><img id="logo" src="{% static 'assets/img/logo1.png' %}" alt="" class="img-fluid" ></span>
+              <hr style="border: rgb(11, 11, 11) 2px solid;" class="mt-5">
+            </center>
+            <div class="row"> 
+              <div class="col mt-2">
+                <div class=" col mt-2 section-title" data-aos="fade-up">
+                <center><h2><span class="text-primary">About </span><span class="text-warning">Us</span></h2></center>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 p-3 mt-3" data-aos="fade-left">
+                <img src="{% static 'assets/img/blog/blog-1.jpg' %}" class="img-fluid" alt="">
+              </div>
+              <div class="col-md-7 p-3">
+                <p class="fs-5 ml-4 mt-2" data-aos="fade-right">Chi-Square Ajira helps organization search for talents to employ and provide contact talent engagements on temporary or
+                  interim basis for organizations at time of growth, change and as scalable and cost effectidve way to address fluctuating bussiness activity. 
+                  Temporary staffing services bridge the gap between workforce capability and required performance.
+                  many people chhose contract employment based on lifestyle needs, including careere flexibility and 
+                  exposure to new and envoronment and opportunities 
+                </p>
+              </div>
+              
+            </div>
+            <div class="row"> 
+              <div class="col mt-2 bg-warning">
+                .
+              </div>
+            </div>
+            
+            <div class="row content">
+              <div class="col-md-4 p-3 mt-3" data-aos="fade-right">
+                <img src="{% static 'assets/img/blog/blog-3.jpg' %}" class="img-fluid" alt="">
+              </div>
+              <div class="col-md-7 p-3">
+                <p class="fs-5 ml-4 mt-2" data-aos="fade-left">
+                  Wether you need a contract talent for busy period, seasonal peak, employee absence or special projects, <b>CHI-SQUARE AJIRA </b> Official team as you covered.
+                  From IT specialists, technicians, hospitality staffing, data entry specialists, customers care personalities to office Managers. We specialize in staffing a wdei viriety of roles
+                  and with organizations around the world.
+                </p>
+              </div>
+             
+            </div>
+            <div class="row"> 
+              <div class="col mt-2 bg-warning" data-aos="fade-right" >
+                .
+              </div>
+            </div>
+            <div class="row content">
+              <div class="col-md-7 p-3">
+                <p class="fs-5 ml-4 mt-2" data-aos="fade-right">
+                  What's more with contract staffing sevices, you have the ability to diminish or alter your workforce without full-fledged layoffs wic can be expensive and emmotionally
+                  taxing. With contract staffing through Chi-square, you are able to witness staff in a live, real deal setting, without having to  commit to full time position.
+                  This ability to assess an individual  before adding them on a parmanent basis is a significant benefit because it afford employers the capacity to determine the candidate's 
+                  work competency and/or cultural fit within the company
+    
+                </p>
+              </div>
+              <div class="col-md-4 p-3 mt-3" data-aos="fade-left">
+                <img src="{% static 'assets/img/blog/blog-recent-4.jpg' %}" class="img-fluid" alt="">
+              </div>
+             
+            </div>
+            <div class="row"> 
+              <div class="col mt-2 bg-warning">
+               .
+              </div>
+            </div>
+
+            <div class="row content">
+              <div class="col-md-7 p-3">
+                <p class="fs-5 ml-4 mt-2" data-aos="fade-left">
+                  We want you to have a clear-cut expactations for what working with Chi-Square will be like. We want our candidates and employers alike to fidn working with us to be effident
+                  streamlined and  customized process
+                </p>
+              </div>
+              <div class="col-md-4 p-3 mt-3" data-aos="fade-right">
+                <img src="{% static 'assets/img/blog/blog-recent-4.jpg' %}" class="img-fluid" alt="">
+              </div>
+            </div>
+           
+            <p class="fs-5 ml-4 mt-2" data-aos="fade-right">
+              We work with fortune 500 leaders, small size bussiness partners and emerging companies: Our staffing reqruitment and talent ideas, are scalableand able to be customized to
+              any size environment or bussiness focus. Your vision is the priority and helping our client partners  connecting with the right technology talent at speed is our promise.
+
+            </p>
+          
+          </div>
+          
+        </div>
+
+      </div>
+    </section>
+    
+     <!-- ======= Experise Section ======= -->
+     <section id="team" class="team section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2 class="text-secondary"> Experties </h2>
+          <p>Explore what our dedicated expertise in these work displines can do for your career</p>
+        </div>
+         <!-- ######################################################## -->
+      <center>
+
+        <style>
+          #category-name{
+            text-transform: uppercase;
+          }
+        </style>
+           
+           <div class="row content mt-5" >
+            <h2 id="category-name" class="text-warning mt-3" data-aos="fade-left">It specealist</h2>
+          </div> 
+           <div class="row ">
+            <div class="row mt-3">
+              <p class="f col-md-7 ml-2 mb-3 " style="text-align: left;" data-aos="fade-up">
+                <!-- <center data-aos="fade-up"> <h5>description</h5> </center> -->
+              </p>
+            </div>
+            <div class="row" style="height: 7vh;">
+
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3 mt-4" data-aos="fade-right">
+              <img src="{% static 'assets/img/blog/blog-4.jpg' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-7 float-left" data-aos="fade-left">
+              <!-- <h4 class="text-secondary"> header </h4>
+              <hr style="border: 1px solid black;"> -->
+              <!-- <p class="float-left"> jhjhjhjhjhj </p> -->
+            </div>
+           </div>
+           
+              
+        
+<!-- ########################################################################### -->
+
+
+    </section>
+</body>
+<!-- footer -->
+{% include 'partials/footer.html' %}
+
+</html>
+
+{% endblock %}

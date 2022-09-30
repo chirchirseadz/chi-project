@@ -1,0 +1,248 @@
+{% extends "partials/base.html" %}  
+{% load crispy_forms_tags %}
+
+{% block title %} Hire Talent Page {% endblock%}
+
+{% block content %}
+
+{% include 'partials/navbar.html'%}
+
+<style>
+    #container{
+        margin-top: 10%;
+    }
+    #top{
+        padding:2%;
+    }
+    @media only screen and (max-width: 600px) {
+        #container{
+        margin-top: 20%;
+    }
+    #colapse-paragraph{
+        width: 100%;
+    }
+    }
+
+</style>
+
+<div id="container" class="row" data-aos="fade-up">
+    
+    <div class="col-md-3"></div>
+    <div class="col-md-6 mt-3">
+        {% if messages %}
+        <div class="form-group">
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="alert alert-danger">
+                    {{message}}
+                </div>
+                {% endif %}
+                {% if message.tags == "success" %}
+                <div class="alert alert-success">
+                    {{message}}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="card">
+            <div id="top" class=" bg-success text-white">
+             Make Your Job Hire Proposal Here
+            </div>
+            <div class="row p-3">
+                <div class="col-md-12">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{hire_request_form.first_name|as_crispy_field}}
+                        {{hire_request_form.last_name|as_crispy_field}}
+                        {{hire_request_form.email|as_crispy_field}}
+                        {{hire_request_form.area_of_need|as_crispy_field}}
+                        {{hire_request_form.your_specifications|as_crispy_field}}
+                        {{hire_request_form.phone_number|as_crispy_field}}
+                        {{hire_request_form.location|as_crispy_field}}
+                        {{hire_request_form.terms_of_service|as_crispy_field}}
+                   
+                        <p id="colapse-paragraph">
+                            <button class="btn btn-primary btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample">
+                            Read and Agree with  Terms and Conditions
+                            </button>
+                          </p>
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                           
+                                <h5>1.  PERSONAL INFORMATION WE COLLECT</h5>
+                                <br>
+                                We may collect a variety of Personal Information from or about you or your devices from various sources, as described below.
+                                <br>
+                                <b>A. Personal Information You Voluntarily Provide to Chi-Square Connection</b>
+                                <br>
+                                <b>Registration and Profile Information.</b>You may choose to sign up for an account on our Services, including to join the Chi-Square Connection. Upon your signup to the Chi-Square Connection, we may ask you for your name, email address, phone number, country location, English proficiency, primary skill, years of working experience, years of experience with primary skill, information included in your resume, and name of a person who referred you.
+                                <br><br>
+                                <b>Communications.</b>
+                                If you contact us directly, we may receive additional Personal Information about you. For example, if you contact us for technical support, we may receive your name, email address, phone number, the contents of your message, attachments that you may send to us, and other Personal Information you choose to provide. If you subscribe to our newsletter, we will collect Personal Information such as your email address. When we send you emails, we may track whether you open them to learn how to deliver a better experience and improve our Services.
+                                <br>
+                                <br>
+                                <b>Hire Talent Through Chi-Square Connection</b>
+                                
+                                You may choose to use our Services to access pre-vetted talent if you are interested in hiring through Chi-Square Connections. Upon submitting your request form, we may ask you for your name, company name, job title, work email, company URL, phone number, employee range, your current role and country.
+                                <br>
+                                <br>
+                                <b>Additional Services. </b>
+                                If you make use of our Site to register for certain services, including to download e-books, attend virtual events or webinars, or submit a testimony to be published on our Services, we may ask you to provide your name, company name, job title, (work) email address, phone number, employee range, primary skill, years of experience in framework and country.
+                                <br><br>
+                                <b>Chi-Square Connection Learning Community. </b>
+                                If you choose to submit your interest in joining the Chi-Square Connection Learning Community, we may ask you for your name, email address, country, seniority level, most proficient framework, professional years of experience in framework, top 5 tech skills, top 5 tech tools, and resume.
+                                <br><br>
+
+                                <b>Become a Partner.</b>
+                                If you are interested in becoming our Partner, we may ask to submit your name, company name, work email address, phone number, and your current role.
+                                <br><br>
+
+                                <b>Careers.</b>
+                                If you decide that you wish to apply for a job with Chi-Square Connections, we may ask you to submit your name, email address, phone number, location (city), your resume, cover letter, the name of the Chi-Square Connection employee who referred you, the number of years of experience relevant for the job profile, desired compensation range, the information on how you learned about the job offer, and other relevant information. We will collect the information you choose to provide on your resume and in your cover letter, such as your education and employment experience. You may choose to voluntarily provide information on your gender, race/ethnicity, veteran status, and disability status. If you apply for a job with us through a third-party platform (such as LinkedIn), we will collect the Personal Information you make available to us through such third-party platform.
+                                <br><br>
+                                If you do not provide your Personal Information when requested, you may not be able to use our Services if that Personal Information is necessary to provide our Services or if we are legally required to collect it. For example, while Users visiting our Site do not have a statutory obligation to provide us with any Personal Information, Chi-Square Connection may have a contractual obligation (pursuant to the Terms & Conditions) to do so. Where required by applicable law, we indicate whether and why you must provide us with your Personal Information, as well as the consequences of failing to do so. If you have any questions regarding whether the provision of Personal Information is mandatory and the consequences for withholding such information, please contact us via admin@chi-squareconnections.com.
+                                 <br><br>
+                                <h5>B. Personal Information We Collect When You Use Our Services</h5>
+                                <br>Like other companies with online services, we receive technical information when you use our Site or access certain Services. We use these technologies to analyze how people use the Site Services and to improve how our Site and Services function.
+                                <br><br>
+                                <b>Location Information. </b>
+                                When you use our Services, we may approximate your geographic region and Internet Service Provider based on your internet protocol (IP) address.
+                                <br><br>
+                                <b>Device Information.</b>
+                                We receive information about the device and software you use to access our Services, including IP address, web browser type, and operating system version.
+                                <br><br>
+                                <b>Usage Information.</b>
+                                To help us understand how you use our Services and to help us improve them, we automatically receive information about your interactions with our Services, like log files, performance logs, diagnostic reports, the pages or other content you view, mouse movements, the searches you conduct, your comments, any content you post, and the dates and times, and duration of your visits.
+                                <br><br>
+                                <b>Information from Cookies and Similar Technologies.</b>
+                                We and third-party partners collect information using cookies, pixel tags, or similar technologies (collectively “Cookies”). Our third-party partners, such as analytics and advertising partners, may use these technologies to collect information about your online activities over time and across different services. Cookies are small files of letters and numbers that we store on your browser or the hard drive of your computer. We may use both session Cookies and persistent Cookies. A session Cookie disappears after you close your browser. A persistent Cookie remains after you close your browser and may be used by your browser on subsequent visits to our Services. For more information, including disclosures related to the active cookies on our Site, please see our Cookie Notice.  
+
+                                <br><br>
+
+                                <h5>C. Personal Information We Receive from Third Parties. </h5>
+                                <br>
+                                <b>Social Sign-In.</b>
+                                We may collect Personal Information about you when you log in to our Services via third-party services (such as Google). This information may include your social media user id, email address, full names and profile picture.
+                                <br><br>
+                                <b>Third-Party Services.</b>
+                                You may also post photos, comments, or reviews on our pages available through third-party platforms, including Facebook, LinkedIn, Twitter, and Instagram. If you do so, we and other users on those third-party platforms may be able to view the Personal Information you make available through these third-party platforms.
+                                <br><br>
+
+                                <b>Professional social media link/identifier.</b>
+                                if you include a professional social media link/identifier or your personal website in your job application with us, we may retrieve information about your professional social media / online presence from such sites.
+                                <br><br>
+                                <b>Partners.</b>
+                                We may receive additional Personal Information about you from third parties (such as partners that provide publicly available demographic information about you), affiliate partners,  or marketing partners and combine it with other Personal Information we have about you.
+
+                                <br><br>
+                                <b>Chi-Square Connection Clients.</b>
+                                We also may receive PII from Chi-Square ConnectionClients to perform services for them. Any PII used for such purposes will be limited to access by only those who require it given their job function at Andela, and except as otherwise provided herein, we only share the PII back with our respective Clients. Chi-Square Connection does not retain, use, or disclose any Personal Information collected on behalf of our Clients for any purpose (including any commercial purpose) other than the specific purpose of performing the services as specified in the applicable Master Services Agreement with the Client.
+
+                                <br><br>
+                                <h5>2.  HOW WE USE THE PERSONAL INFORMATION WE COLLECT</h5>
+                                We use the Personal Information we collect: <br>
+
+                                • To provide, maintain, improve, and enhance our Services. <br><br>
+                                • To communicate with you, provide you with updates and other information relating to our Services, provide information that you request, respond to comments and questions, and otherwise provide customer service and support. <br><br>
+                                • For marketing purposes, such as developing and providing promotional and advertising materials that may be useful, relevant, valuable, or otherwise of interest to you, to market events, promotions, competitions, webinars, reports, our services, news, or relevant industry updates. <br><br>
+                                • To personalize your experience on our Services such as presenting tailored content. <br><br>
+                                • To conduct research to understand and analyze how you use our Services and develop new products, services, and features. <br><br>
+                                • To process job applications. <br><br>
+                                • To process your submissions, including to become our talent, client or partner, join the Chi-Square Connection Learning Community, to download e-books, or attend webinars or events. <br><br>
+                                • To find and prevent fraud and respond to trust and safety issues that may arise. <br> <br>
+                                • For compliance purposes, including enforcing our legal rights, or as may be required by applicable laws and regulations or requested by any judicial process or governmental agency. <br><br>
+                               
+                                • To enforce and comply with the law, including to conduct an investigation, to protect the property and rights of Chi-Square Connection or a third party, to protect the safety of the public or any person, or to prevent or stop activity we may consider to be, or to pose a risk of being, illegal, fraudulent, unethical or legally actionable activity. <br><br>
+                              
+                                • For other purposes for which we provide specific notice at the time the Personal Information is collected. <br><br>
+
+                                <br><br>
+                                <h5> 3.  HOW WE SHARE THE PERSONAL INFORMATION WE COLLECT</h5>
+                                <br>
+                                <b> Affiliates.</b>
+                                We may share your Personal Information with our affiliates for any of the purposes described in this Privacy Policy.
+                                <br><br>
+                                <b>Vendors, Affiliate Partners and Service Providers.</b>
+                                We may share any Personal Information we receive with vendors, affiliate partners and service providers retained in connection with the provision of our Services. Chi-Square Connection actively engages third-party resources, applications, and websites. These services provided by third parties are established to enhance user experience, provide ease of navigation through Chi-Square Connection’s sites, and to promote access to information. Chi-Square Connection may provide PII of Users to only those of its personnel and third-party vendors that (1) need to know such information to process it on Chi-Square Connection’s behalf or to provide services as described above, and (2) have agreed in writing not to disclose it to any other parties without Chi-Square Connection’s consent. Some of those employees, contractors, vendors, affiliate partners and affiliated organizations may be located outside of your home country; by using the Site and/or Services, you consent to the transfer of information to such individuals and organizations to accomplish these purposes.
+                                <br><br>
+                                <b>Marketing.</b>
+                                Chi-Square Connection does not buy or sell PII for its business practices or for commercial purposes unless we have your permission. From time to time, Chi-Square Connection may engage in joint marketing events with select business partners. If you register for a joint webinar or specifically express an interest in a jointly offered product, promotion or service, we may share relevant PII with those partner(s). Where you have given your consent to do so, these business partners may send you marketing communications about their own products and services.
+                                <br><br>
+                                <b>Sweepstakes, Contests, and Promotions:</b>
+                                We may offer sweepstakes, contests, and other promotions (any, a “Promotion”) that may require registration. By participating in a Promotion, you are agreeing to the official rules that govern that Promotion, which may contain specific requirements of you, including, except where prohibited by law, allowing the sponsor(s) of the Promotion to use your name, voice, likeness, or other indicia of persona in advertising or marketing associated with the Promotion. If you choose to enter a Promotion, your Personal Information may be disclosed to third parties or the public in connection with the administration of such Promotion, including, without limitation, in connection with winner selection, prize fulfillment, and as required by law or permitted by the Promotion’s official rules, such as on a winner’s list.
+                                <br><br>
+                                Please note that Chi-Square Connection does not control, moderate, or endorse any comments or opinions provided by visitors on third-party websites. The use and creation of official Chi-Square Connection accounts may cause PII to become available or accessible to Chi-Square Connection. Such information may become available to Chi-Square Connection when a user provides, submits, communicates, links, posts, or associates information with designated Chi-Square Connection accounts on social media (e.g., by using “hashtags”, “liking”, “friending”, “tweeting”, commenting on any content or media on our designated accounts). At times, Chi-Square Connection, through its personnel, employees, officers, directors, agents, and assignees, may respond publicly to content or media made available though “share,” “retweet,” “friend,” “follow,” or similar activities, or respond publicly on content made on designated and official Chi-Square Connection accounts. Chi-Square Connection may disseminate any of such information or PII to law enforcement officials, as required by law or court order.
+                                <br><br>
+                                <b>Analytics Partners.</b>
+                                We use analytics services such as Google Analytics, You can learn more about Google’s practices by visiting https://www.google.com/policies/privacy/partners/. To help us understand how you use our Services and to help us improve them, we automatically receive Personal Information about your interactions with our Services, like the pages or other content you view, the searches you conduct, purchases you make, your comments, any content you post, and the dates and times of your visits.
+                                <br><br>
+                                <b> Required by Law and Similar Disclosures.</b>
+                                We may access, preserve, and disclose your Personal Information if we believe doing so is required or appropriate to: (a) comply with law enforcement requests and legal process, such as a court order or subpoena; (b) respond to your requests; or (c) protect your, our, or others’ rights, property, or safety. This includes exchanging information with other companies and organizations, including law enforcement agencies, for the purposes of fraud protection and to prevent cyber or other suspected or alleged crime. For the avoidance of doubt, the disclosure of your Personal Information may occur if you post any objectionable content on or through the Services.
+                                <br><br>
+                                <b>Merger, Sale, or Other Asset Transfers.</b>
+                                We may disclose your Personal Information to service providers, advisors, potential transactional partners, or other third parties in connection with the consideration, negotiation, or completion of a corporate transaction in which we are acquired by or merged with another company, or we sell, liquidate, or transfer all or a portion of our assets.
+                                <br><br>
+                                <b>With Your Consent.</b>
+                                We may also disclose your Personal Information with your permission.
+                                <br><br>
+                                
+                                <h5>5. YOUR CHOICES & RIGHTS</h5>
+                                <br>
+                                <b>Marketing Communications. </b>
+                                You have the right to object if we are processing your PII for direct marketing purposes. You can unsubscribe from Chi-Square Connection’s own marketing emails at any time by clicking the “unsubscribe” link they contain or by accessing the Email Preferences Center. Depending on which jurisdiction you are in, we may be required to give you an option to “opt-in” and we will always provide you with an option to “opt-out” with each marketing communication. Even if you opt-out of receiving promotional messages from us, you will continue to receive administrative messages from us.
+
+                                <br>
+                                Individuals also can choose whether their PII is (1) to be disclosed to a third party or (2) to be used for a purpose other than the purpose for which it was originally collected or subsequently authorized by the individual.
+                                In accordance with applicable law, you may have the right to:
+
+                                <br><br>
+
+                                <b>Access Personal Information.</b> You may request confirmation of whether we are processing your Personal Information and obtain a copy of the categories of Personal Information we may have collected on your behalf.
+                                <br>
+                                 <b>Request Deletion (“Opt Out”) or Withdraw Consent.</b> You may request to remove your PII from our records. Note that if your Personal Information is deleted, you may no longer access or be able to use certain Services, and any account you have with us may become deactivated. <br><br>
+                                If you wish to access, correct, amend, or delete PII you have provided directly to us, please contact our office at admin@chi-squareconnections.com For deletion/opt-out requests, please include the subject line “OPT OUT”. We will respond to requests within thirty (30) days. If we require more time, we will inform you of the reason and extension period for a response in writing. <br><br>
+                                When any Client requests Chi-Square Connection to remove any Client data that Chi-Square Connection may have on its systems, Chi-Square Connection will respond as soon as practicably as possible, and no more than forty-five (45) days after such receipt from our Client. If you wish to no longer have your PII used or disclosed by our Clients, or by us in connection with our work for our Clients, please contact the Client that you interact with directly. 
+                                <br><br>
+                                <h5>6.  SECURITY</h5>
+                                <br>
+                                Chi-Square Connection uses reasonable efforts to protect the security, confidentiality, and integrity of information or data collected by us.
+                                However, as no website, service, mobile application, database, or system is completely secure or “hacker proof,” we can make no guarantees as to the security or privacy of your Personal Information. You are responsible for taking reasonable steps to protect your Personal Information against unauthorized disclosure or misuse.
+                                <br><br>
+                                <h5>8.  RETENTION</h5>
+                                
+                                <br>We take measures to delete your Personal Information or keep it in a form that does not permit identifying you when your Personal Information is no longer necessary for the purposes for which we process it unless we are required by law to keep your Personal Information for a longer period. When determining the specific retention period, we consider various factors, such as the type of service provided to you, the nature anbrd length of our relationship with you, and mandatory retention periods provided by law and the statute of limitations. <br>
+
+                                <br>
+                                <h3>9.  CHILDREN’S PRIVACY</h3>
+                                <br>
+                                Chi-Square Connectionis the controller or entity responsible for the processing of your Personal Information pursuant to this Privacy Policy. We welcome feedback from all our Users and if you have any question regarding this Privacy Policy or the use of your Personal Information, please contact us. You can email our privacy officer at admin@chi-squareconnections.com.br
+                                <br><br>
+                                <h5>11. CHANGES TO OUR PRIVACY POLICY</h5>
+                                <br>
+                                Chi-Square Connection may amend this Privacy Policy at any time by posting a new version to our Site. It is your responsibility to review this Privacy Policy periodically as your continued use of the Site and the Services represents your agreement with the then-current Privacy Policy.
+
+
+
+
+                            </div>
+                            {{hire_request_form.terms_and_conditions|as_crispy_field}}
+                          </div>
+                        
+                        </p> 
+                        <input type="submit" class="btn btn-success " name="submit" value="Submit your Hire Request "><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+

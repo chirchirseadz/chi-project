@@ -1,0 +1,44 @@
+{% extends 'partials/base.html' %}
+{% block title %}Nanny Info{% endblock %}
+
+{% block content %}
+{% include 'partials/navbar.html'%}
+
+<div class="col-md-9" name="maincontent" id="maincontent">
+                    <table class="table table-bordered">
+                        <thead>
+                            <span class="h5">Profile Information</span class="h5">
+            
+                            <hr>
+                        </thead>
+                        
+                        <tbody>
+                            <tr>
+                                <th  id="row" scope="row ">Name</th>
+                                <td>{{ user.username }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Phone</th>
+                                <td>{{ user.nannyprofile.phone_number }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{ user.nannyprofile.city }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-md-3">
+                    <img class="img-thumbnail" src="{{ user.nannyprofile.image.url }}" alt="profile-image">
+                </div>
+                <div class="col-md-12">
+                    <a class="btn btn-info btn-sm float-right" href="{% url 'nanny_profile_update' %}">Edit</a>
+                </div>  
+                
+{% endblock %}
+

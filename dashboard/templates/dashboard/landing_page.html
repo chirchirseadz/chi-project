@@ -1,0 +1,182 @@
+{% extends 'partials/base.html' %}
+{% block title %} homepage {% endblock %}
+{% block content %} 
+{% load static %}
+{% include 'partials/navbar.html' %}
+
+{% for message in messages %}
+  {% if message.tags %}
+  <div id="alert" class=" col-md-12 alert alert-success sent-message ">
+    <h6>{{message}}</h6>
+  </div>
+  {% endif %}
+  {% endfor %}
+  
+{% include 'partials/corousel.html' %}
+{% include 'partials/middle.html' %}
+
+  <main class="main" id="main">
+    
+    <!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h3>WHY YOU SHOULD WORK WITH CHI-SQUARE</h3>
+            <ul>
+              <li><i class="ri-check-double-line text-primary"></i> We do head hunting of our referrals. People who have been tested and confirmed excellent for a specific field</li>
+              <li><i class="ri-check-double-line text-primary"></i> By Chi-Square Connections extensive database of temporary candidates, your company will pay for highly skilled resources and productive time only, thanks to our attendance, productivity and performance management systems. </li>
+              <li><i class="ri-check-double-line text-primary"></i> We understand Payment delays can hurt your good reputation with your workforce. We are willing to manage your temporary employee payment as you chase the delays.</li>           
+            </ul>
+            
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <h4>
+              Why your business should consider using temporary staff
+            </h4>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Keep up with changing demand. Technology is ever changing and you may not keep up with your permanent employees, temporary contracting is the way to go.</li>
+              <li><i class="ri-check-double-line"></i> Make smart staffing decisions. Unfortunately, the peak staff demand will taper off eventually. This conundrum leaves you with a choice of overtaxing your core staff or hiring team members you will need to lay off. Layoffs are bad for the organization, bad for those let go and bad for those left behind. Why take this hit to company morale and reputation if it’s not necessary?</li>
+              <li><i class="ri-check-double-line"></i> Supplementing professional staff to give management adequate time to prepare new initiatives i.e. launching special projects until permanent staffing needs is determined. </li>
+              <li><i class="ri-check-double-line"></i> Supplementing temporary IT specialist staff during busy periods. </li>
+              <li><i class="ri-check-double-line"></i> You obtain higher candidate levels utilizing permanent placement techniques and combining the roles.  </li>
+              
+            </ul>
+            <!-- <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p> -->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+<style>
+  @media only screen and  (max-width: 600px) {
+     #services{ 
+    display: none;
+    opacity: 0;
+    transform: translateY(-1000px);
+  }
+  #row{
+    display: none;
+    transform: translateY(-1000px);
+    
+  }
+  #section{
+    padding: 0;
+    padding-bottom: -100000px;
+  }
+  #talents{
+          height: 0px;
+        }
+        ul ,li {
+          list-style: none;
+          
+        }
+    .header{
+      margin-bottom: 30%;
+    }
+}
+ 
+</style>
+   
+    <!-- ======= Services Section ======= -->
+    <section id="section" class="services section-bg">
+      <center style="margin-left:4%; margin-bottom: 5%;" class="header" ><h1 class="bi bi-award-fill text-success "></h1><h4 class="text-success ">Available Requested Talents</h4></center>
+      <div class="row ">
+    
+     <!-- ======= Our Clients Section ======= -->
+<!--      
+     <div class="col-md-1">nams</div> -->
+     <div id="services" class="col-md-3 d-flex"><center class=" p-4" style="margin-bottom: 1%; margin-left: 30%;"><h3 class="bi bi-people text-success "></h3><h3 class="text-success">Talent Name</h3></center>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <center id="services"  class=" p-4" style=" margin-left: 10%;"><h3 class="bi bi-person-workspace text-success "></h3><h3 class="text-success">Area of specialization</h1></center>
+     </div>
+     <div class="col-md-4 d-flex">
+      <center id="services"  class=" p-4" style=" margin-left: 25%;"><h3 class="bi bi-geo-alt-fill text-success "></h3><h3 class="text-success">Talent Location </h3></center>
+     </div>
+     
+    </div>
+    <div class="col-md-1"></div>
+    <section id="clients" class="clients">
+      
+    
+      <style>
+        #talents{
+          height: 20vh;
+          margin-top: -100px;
+        }
+        ul ,li {
+          list-style: none;
+          
+        }
+      </style>
+    <div class="row" id="talents">
+      <div class="col-md-1"></div>
+            <div class="col-md-4">            
+                <marquee  direction = "up" scrolldelay:300>
+                  {% for data in data %}
+                  <ul >
+                    <li class="text-success" style="font-size: x-large;">{{data.first_name }}<span> {{data.last_name}}</span></li>
+                  </ul>
+                  {% endfor %}
+                </marquee>
+            </div>
+            <div class="col-md-4">            
+              <marquee  direction = "up" scrolldelay:300>
+                {% for data in data %}
+                <ul >
+                  <li class="text-success" style="font-size: x-large; margin-left: -2%;">{{data.area_of_specialization }}</li>
+                </ul>
+                {% endfor %}
+              </marquee>
+            </div>
+            <div class="col-md-3">            
+              <marquee  direction = "up" scrolldelay:300>
+                {% for data in data %}
+                <ul >
+                  <li class="text-success" style="font-size: x-large;">{{data.location}}</li>
+                </ul>
+                {% endfor %}
+              </marquee>
+            </div>
+            
+            
+
+
+
+
+
+            <!-- <div class="col-md-4">
+              <center>
+                <marquee  direction = "up" scrolldelay:300>
+                  {% for data in data %}
+                  <ul>
+                    <li class="text-success" style="color: black; font-size: x-large;">{{data.area_of_specialization }}</li>
+                  </ul>
+                  {% endfor %}
+                </marquee>
+              </center>
+            </div>
+            
+            
+          </div>
+       -->
+    
+      
+    </div>
+    </section>
+
+  </main>
+  
+  <!-- End #main -->
+
+  
+</body>
+
+{% include 'partials/footer.html' %}
+{% endblock %} 

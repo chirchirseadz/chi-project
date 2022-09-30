@@ -1,0 +1,164 @@
+{% extends 'partials/base.html' %}
+{% block title %}Profile page{% endblock %}
+
+{% block content %}
+{% include 'partials/navbar.html'%}
+
+{% if user.is_staff %}
+
+<div style="margin-top:7%;" class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        {% if user.user_profile.profile_updated == False %}
+        <div class="col-12 alert alert-danger">
+            Your Profile is Incomplete, Your job Post will not Appear  to the Talents 
+        </div>
+        {% endif %}
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                Employer Profile Detail Page
+            </div>
+            <div class="row p-3">
+                <div class="col-md-8">
+                    <table class="table table-borderless">
+                        <thead>
+                            <span class="h4">Profile Information</span class="h4">
+                            <a class="btn btn-success btn-sm float-right" href="{% url 'update_profile' %}">Edit</a>
+                            <hr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">First Name</th>
+                                <td>{{ user.first_name }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Last Name</th>
+                                <td>{{ user.last_name }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Mobile Number </th>
+                                <td>{{ user.user_profile.phone }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{ user.user_profile.address }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Job Title</th>
+                                <td>{{ user.user_profile.job_title }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">National ID</th>
+                                <td>{{ user.user_profile.national_id }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Select Area of Specialization </th>
+                                <td>{{ user.user_profile.area_of_specialization }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Your brief info </th>
+                                <td>{{ user.user_profile.brief_info }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Current Location </th>
+                                <td>{{ user.user_profile.current_location }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Company Name </th>
+                                <td>{{ user.user_profile.company_name }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Company Email </th>
+                                <td>{{ user.user_profile.company_email }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <img class="img-thumbnail" src="{{ user.user_profile.image.url }}" alt="profile-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+
+
+<div style="margin-top:7%;" class="row">
+    
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+        {% if user.user_profile.profile_updated == False %}
+<div class="col-12 alert alert-danger">
+    Your Profile is Incomplete, Your Requests will not Appear  to the Employers 
+</div>
+{% endif %}
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                User Profile Detail Page
+            </div>
+            <div class="row p-3">
+                <div class="col-md-8">
+                    <table class="table table-borderless">
+                        <thead>
+                            <span class="h4">Profile Information</span class="h4">
+                            <a class="btn btn-success btn-sm float-right" href="{% url 'update_profile' %}">Edit</a>
+                            <hr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">First Name</th>
+                                <td>{{ user.first_name }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Last Name</th>
+                                <td>{{ user.last_name }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Mobile Number </th>
+                                <td>{{ user.user_profile.phone }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{ user.user_profile.address }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">National ID</th>
+                                <td>{{ user.user_profile.national_id }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Select Area of Specialization </th>
+                                <td>{{ user.user_profile.area_of_specialization }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Your brief info </th>
+                                <td>{{ user.user_profile.brief_info }}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Current Location </th>
+                                <td>{{ user.user_profile.current_location }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <img class="img-thumbnail" src="{{ user.user_profile.image.url }}" alt="profile-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}
+

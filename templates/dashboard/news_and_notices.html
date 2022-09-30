@@ -1,0 +1,32 @@
+{% extends 'partials/base.html' %}
+{% block title %} Testimonials {% endblock %}
+{% load static %}
+{% block content %} 
+{% include 'partials/navbar.html' %}
+
+<!-- start of BreadCrumbs -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+        <h2>News and Notices</h2>
+        <ol>
+            <li><a href="{% url 'landing_page' %}">Home</a></li>
+            <li>News and Notices</li>
+        </ol>
+        </div>
+
+    </div>
+</section>
+
+<!-- End Breadcrumbs -->
+
+
+    
+
+
+
+
+
+
+{% endblock %}

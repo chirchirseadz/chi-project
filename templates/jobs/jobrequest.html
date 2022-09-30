@@ -1,0 +1,216 @@
+{% extends "partials/base.html" %}  
+{% load crispy_forms_tags %}
+
+{% block title %}Talent Job Request Page {% endblock%}
+
+{% block content %}
+
+{% include 'partials/navbar.html'%}
+
+<style>
+    #container{
+        margin-top: 10%;
+    }
+    #top{
+        padding:2%;
+    }
+    @media only screen and  (max-width: 600px) {
+        #container{
+        margin-top: 20%;
+    }
+    #colapse-paragraph{
+        width: 100%;
+    }
+    }
+
+</style>
+
+<div id="container" class="row" data-aos="fade-up">
+    
+    <div class="col-md-3"></div>
+    <div class="col-md-6 mt-3">
+        {% if messages %}
+        <div class="form-group">
+            {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="alert alert-danger">
+                    {{message}}
+                </div>
+                {% endif %}
+                {% if message.tags == "success" %}
+                <div class="alert alert-success">
+                    {{message}}
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="card">
+            <div id="top" class=" bg-success text-white">
+             Make Your Job Hire Proposal Here
+            </div>
+            <div class="row p-3">
+                <div class="col-md-12">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{request_form.first_name|as_crispy_field}}
+                        {{request_form.last_name|as_crispy_field}}
+                        {{request_form.email|as_crispy_field}}
+                        {{request_form.area_of_specialization|as_crispy_field}}
+                        {{request_form.job_title|as_crispy_field}}
+                        {{request_form.your_info|as_crispy_field}}
+                        {{request_form.location|as_crispy_field}}
+                        {{request_form.phone_number|as_crispy_field}}
+                        {{request_form.terms_of_service|as_crispy_field}}
+                        <p>
+                            <button class="btn btn-primary btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample">
+                            Read Terms and Conditions
+                            </button>
+                          </p>
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                1. Chi-Square Connections is building a movement to advance human potential by powering today’s teams and investing in tomorrow’s leaders. We connect experts across the country to the leading technology companies. To this end, we are building a network of top technologists. The aim of the Network is to build a strong community of technologists and provide them with access to employment opportunities. <br><br>
+                                <h6>1.2 As a member of Chi-Square Connections, you agree to:</h6>
+                                <br>
+                                i.  Maintain an up-to-date profile with your contact information, availability and skill set.
+                                <br><br>
+                                ii.  Engage with any Chi-Square Connections staff who may reach out to you for employment opportunities in a timely and professional manner.
+                                <br>
+                                <br>
+                                iii. Conduct yourself in a professional manner and apply proper etiquette in expressing your views in both physical and online (i.e. social media) communities. Please note that your views expressed in these forums are your own and not associated with Chi-Square Connections
+
+                                <br>
+                                <br>
+
+                                vi.  Maintain strict confidentiality, and refrain from sharing sensitive and confidential client information or job-related information outside of the Network.
+                                <br>
+                                <br>
+                                    <h5>2.0 INTERVIEW GUIDELINES</h5>
+                                <br>
+                                
+                                2.1  If selected to interview with Chi-Square Connections, Chi-Square Connections’ Client or employer, you agree to be professional. Be on time, communicate clearly and honestly, and provide at least 48 hours notice in the event you cannot make the interview.  Additionally, you must ensure your internet connection is up to speed, and adhere to a professional dress code. Do request any additional prep details needed going into your interview.
+
+                                <br>
+                                <br>
+                                    <h5>3.0 REPRESENTATIONS AND WARRANTIES </h5>
+
+                                <br>
+                               
+                                3.1 You represent that you are a qualified and capable Chi-Square Connection member, and that you will devote your best efforts, skill, knowledge and attention to the elected Member responsibilities. 
+                                <br>
+                                <br>
+                                3.2 You represent that all information provided by you to Chi-Square Connection in respect of your personal background, education, qualifications and experience are voluntarily given, accurate and truthful, and that no material information relating to the aforementioned areas is withheld. 
+                                <br>
+                                <br>
+                                3.3 You will not participate in any work or schemes that are intended or reasonably foreseeable to jeopardise your engagement with Chi-Square Connection.  You are required to be conscious of all potential conflicts of interest which may arise with respect to your engagement with Chi-Square Connection, and to act in good faith, with candour and care in dealing with such situations. Where there is a possible conflict of interest, you will immediately inform your Partner Experience representative. 
+
+
+                                <br>
+                                <br>
+                                A “conflict of interest” refers to a situation where a person has competing professional or personal obligations or financial interest that will make it difficult to fulfil his duties fairly or objectively. 
+                                
+                                <br><br>
+                                <h5>4.0 INDEMNITY  </h5>
+
+                                <br>
+                               
+                                4.1 You shall indemnify and hold Chi-Square Connection harmless to the full extent from and against any and all third party claims, damages, liabilities, costs and expenses, including reasonable legal fees and expenses, arising out of or relating to the breach of any representation or warranty on your part. 
+
+                                <br>
+                                <br>
+                                4.2 You shall indemnify Chi-Square Connection to the full extent against any and all liabilities which Chi-Square Connection incurs as a direct or indirect result of your actions or inactions, during the course of the engagement. 
+                                <br>
+                                <br>
+                                <h5>5.0 CONFIDENTIALITY   </h5>
+                                <br>
+                                
+                                5.1 Confidential Information shall for the purpose of this engagement include all information which you come across or have access to, or is disclosed by Chis-Square Connections, Chi-Square Connection’s Client or CHI-SQUARE CONNECTION Network employer (Chi-Square Connection), to you regarding trade secrets, patents, patent applications, trademarks, copyrights, trade address, intellectual property, know-how, inventions, discoveries, improvements, processes, techniques, algorithms, rating systems, samples, media and/or cell lines, software programs (whether in source or object code form), designs, drawings, formula or test data relating to any research program, work in process, research, development, engineering, manufacturing, distributing, marketing, servicing, financing, pricing or proposal information, or any personnel information relating to Chi-Square Connection, Chi-Square Connection’s Client or CHI-SQUARE CONNECTION Network employer (Chi-Square Connection) its present or future products, sales, suppliers, clients, contact sources, customers, employees, investors or business, and whether in oral, written, visual, graphic,  electronic form or in any form whatsoever and howsoever disclosed by Chi-Square Connection. 
+                                <br>
+                                <br>
+                                5.2 Confidential Information will also include all third party information and information that Chi-Square Connection has received from others. Also, any information or materials specifically marked as “Confidential” or “Proprietary” will be treated as Confidential Information. However, Confidential Information does not need to be marked “Confidential” or “Proprietary” in order to be considered as Confidential Information. 
+                                <br>
+                                <br>
+                                You acknowledge that confidential information is a valuable, special and unique asset proprietary to Chi-Square Connection, and you hereby agree that you shall not during or after the course of this engagement with Chi-Square Connection, disclose Confidential Information to any third party for any reason or purpose whatsoever without Chi-Square Connection’s prior written approval.
+
+                                <br><br>
+                                “Third Party” means any party other than Chi-Square Connection, its holding and subsidiary companies or agents. Notwithstanding the foregoing, you may disclose Confidential information to Chi-Square Connection’s holding and subsidiary companies, or agents, professional partners and advisers on a need-to-know basis only. 
+
+                                <br>
+                                <br>
+                                5.3 All information and data provided to you by Chi-Square Connection shall be used exclusively for the purposes arising from this engagement. You shall prevent the use of Chi-Square Connection’s information, data, computers, equipment and other properties by third parties. Also, you shall notify Chi-Square Connection without undue delay of any misuse of Chi-Square Connection’s information, data, computers, equipment and other properties. 
+
+                                <br><br>
+                                5.4 You shall not copy, reproduce, modify, alter, disassemble, reverse engineer or decompile any Confidential Information unless expressly permitted in writing by Chi-Square Connection. Also, you shall not print or copy, in whole or in part, any documents or other media containing any Confidential Information without the written consent of  Chi-Square Connection other than copies for its officers, directors, employees, investors, consultants, advisors or partners who are working on the program or any transaction relating thereto. 
+
+
+                                <br><br>
+                                5.5 You shall protect Confidential Information in your possession using the same standard of care that Chi-Square Connection applies to safeguard its own proprietary, secret or confidential information and you shall ensure that Confidential Information is stored and handled in such a way as to prevent any unauthorized disclosure or use thereof.  Where there is a possible breach of Confidential Information, you will immediately inform your Partner Experience representative.
+
+                                <br><br>
+                                5.6 Where you are compelled by applicable regulatory and/or fiscal authorities and any other valid order carrying the force of law to disclose any confidential or proprietary information, you shall promptly notify Chi-Square Connection of such obligation to enable it to limit or mitigate the disclosure as may be practicable.
+
+                                <br><br>
+                                <h5>6.0 NO CREATION OF EMPLOYMENT, PARTNERSHIP OR AGENCY  </h5>
+                                <br>
+                                6.1 By joining the Network, you acknowledge that no employment, joint venture, partnership or agency relationship is created between you and Chi-Square Connection, and that you are not entitled to any remuneration by being a member of this Network, except when subsequently engaged in an paid relationship with Chi-Square Connection’s Client or CHI-SQUARE CONNECTION Network employer.
+
+                                <br><br>
+                                <h5>7.0 GENERAL</h5>
+
+                                <br>
+                                7.1 You acknowledge and accept not to directly contact any of Chi-Square Connection’s clients, customers, partner organisations or affiliates, or directly enter into any arrangements with them without Chi-Square Connection’s prior written approval. This clause is without prejudice to any existing relationships and agreements prior to your engagement with Chi-Square Connection. However, such relationships and agreements must be declared prior to the commencement of your engagement with Chi-Square Connection. 
+                                <br><br>
+                                7.2 You agree to allow Chi-Square Connection to use feedback, including quotes, photos, blogs, videos etc., obtained during or as a result of your activities related to the Network, as promotional materials for any other programs and schemes run by Chi-Square Connection. You are responsible for all data, information and other content that you upload, post, or otherwise provide or store (hereafter “post(ing)”) in connection with or relating to the Network.
+
+                                <br><br>
+                                7.3 When you interact with Chi-Square Connection through the Network, Chi-Square Connection may collect Personal Data and other information from you. Chi-Square Connection’s Privacy Policy sets out how Chi-Square Connection collects, retains, and uses information, including personal data and non-identifiable data, about service users and site visitors. This Privacy Policy also covers data that Chi-Square Connection collects in-person and through Chi-Square Connection. You agree to allow Chi-Square Connection to collect and retain your personal data collected through the Network. You may at any time request to have your information deleted from the Network by referring to the steps set forth in Chi-Square Connection’s Privacy Policy
+                                <br><br>
+                                7.4 We reserve the right, but do not assume the obligation, to investigate any potential violation of these Terms and Conditions and to remove, disable access to, modify or terminate your membership in the Network at any time. Our failure to act with respect to a breach by you or others does not waive our right to act with respect to subsequent or similar breaches. We do not guarantee we will take action against all breaches of these Terms and Conditions. Chi-Square Connection reserves the right to enforce all remedies it has available in the case of a breach of these Terms and Conditions, including legal action where necessary. 
+                                <br><br>
+                                <h5>8.0 PROHIBITED SITE USES</h5>
+                                <br>
+                                You may not use, or encourage, promote, facilitate, instructor induce others to use, the Talent Network for any activities that violate any law, statute, ordinance or regulation; for any other illegal or fraudulent purpose or any purpose that is harmful to others; or to transmit, store, display, distribute or otherwise make available content that is illegal, fraudulent or harmful to others.
+                                <br><br>
+                                <h5>9.0 REPORTING AND CORRECTING VIOLATIONS</h5>
+                                <br>
+                                9.1 If you become aware of any violation of these Terms and Conditions, you must immediately report it to the Chi-Square Connection management team. You agree to assist us with any investigation we undertake and to take any remedial steps we require in order to correct a violation of these Terms and Conditions.
+                                <br><br>
+                                <h5>10.0 GOVERNING LAW</h5>
+                                <br>
+                                10.1  The Terms and Conditions of the Network are binding on you and will be  construed, and interpreted in accordance with the laws of Kenya. without giving effect to any choice or conflict of law provision or rule that would cause the application of laws of any other jurisdiction.
+
+                               
+
+                                <p class="ml-4">
+
+                                </p>
+                            </div>
+                            <div class="col-md alert alert-warning"> Agree with Chi-square connections terms and condtions</div>
+                            {{request_form.terms_and_conditions|as_crispy_field}}
+                          </div>
+                        
+                        </p> 
+                        <input type="submit" class="btn btn-success " name="submit" value="Submit your Hire Request "><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+{% extends "partials/base.html" %}  
+{% load crispy_forms_tags %}
+
+{% block title %} Update Profile {% endblock%}
+
+{% block content %}
+{% include 'partials/navbar.html'%}
+<div class="container">
+    <div class="row mt-1">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 offset-md-5">
+            <div class="border bg-white p-2">
+                <hr>
+                <div class="alert alert-primary">
+                    <h4>Profile Update</h4>
+                </div>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ user_form | crispy}}
+                    {{ employer_profile_update_form | crispy}}
+                    
+                    <input type="submit" class="btn btn-info" name="submit" value="Update Profile"><br>
+                </form>
+
+            
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

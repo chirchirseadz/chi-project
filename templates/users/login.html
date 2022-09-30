@@ -1,0 +1,48 @@
+{% extends "partials/base.html" %}  
+{% load crispy_forms_tags %}
+
+{% block title %} Login page  {% endblock%}
+
+{% block content %}
+{% include 'partials/navbar.html' %}
+
+
+<div class="container mt-4">
+<br>
+
+<div class="row">
+  <div class="col-4"></div>
+ 
+  <div class="col-md-4">
+    <p class="text-center text-success mt-5">CHI-SQUARE CONNECTIONS </p>
+    <hr style="font-size:100px;">
+    <div class="card">
+      
+      <article class="card-body">
+       
+      <h4 class="card-title mb-3 mt-1">Log in</h4>
+        <form method="post" action="{% url 'login' %}" class="col-md-12">
+          {% csrf_token %}
+          {{form | crispy}}
+              <input value="Login" type="submit" class="btn btn-success btn-block mt-4 ">
+          </div>
+          <div class="lower">
+            <div class="checkbox">
+              <p class="text-dark"> Dont Have  have an account ? <span> <a class="text" href="{% url 'signup' %}"> Register</a></span></p> 
+            </div> <!-- checkbox .// -->
+            <p class="text-dark"> Forgot password ? <span> <a class="text" href="#"> Reset password </a></span></p> 
+            </div> <!-- form-group// -->
+          </div>  
+                                                                  
+      </form>
+      </article>
+    </div> 
+  </div>
+  {% endblock %}
+
+
+
+
+
+ 
+        

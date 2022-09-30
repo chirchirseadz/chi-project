@@ -1,0 +1,76 @@
+#label{
+    padding-right:-2px; 
+    font-size: 20px;
+  
+}
+#span{
+    
+    margin-bottom: 20px;
+}
+#maincontent{
+    margin-top: 70%;
+}
+
+/* profile update html styles */
+
+#container{
+    margin-top: 2%; 
+}
+
+#top{
+    padding:2%;
+}
+#alert{
+    
+    position: relative;
+    margin-top: -1000px;
+}
+@media only screen and  (max-width: 600px) {
+    #container{
+        margin-top: 20%;
+    
+}
+#alert{
+    
+    position: relative;
+    margin-top: -1000px;
+}
+#top{
+    padding:2%;
+    
+}
+    
+}
+
+
+
+/* ################################################################ */
+#talents{
+    height: 20vh;
+    margin-top: -100px;
+  }
+  ul ,li {
+    list-style: none;
+    
+  }
+@media only screen and  (max-width: 900px) {
+  #talents{
+  opacity: 0;
+  
+}
+#talent-header{
+opacity: 0;
+
+}
+
+}
+
+
+@media only screen and  (max-width: 600px) {
+    #home1img{
+        height: 0vh;
+    }
+    
+}
+
+

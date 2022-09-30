@@ -1,0 +1,46 @@
+
+<!-- ======= Hero Section ======= -->
+<style>
+   
+    #buttons{
+        width: 200px;
+        border-radius: 50%;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+    }
+    #box-container{
+         margin-left:4%;
+    }
+    @media only screen and  (max-width: 600px) {
+        #box-container{
+        margin-left:0%;
+    }
+    
+    }
+
+</style>
+  <section class="middle " style=" height: 40; background-color: #e1f1e7; ">
+   <div class="row">
+       <div  class="col-md-1 "></div>
+       <div class="col-md-1 "></div>  
+       <div class="col-md-1"></div>
+    
+       <div class="col-md-2 " id="box-container"> 
+        <center style="margin-bottom: 5%;">
+            <a id="buttons" class="btn btn-outline-success p-4 " href="">Hire Talent</a>
+        </center>
+       </div>
+       <div class="col-md-1 bg-"></div>
+       <div class="col-md-2 ">
+        <center>
+            <a id="buttons" class="btn btn-outline-success p-4 " href="{% url 'request_form' %}">Find Job</a>
+        </center>
+       </div>
+       
+    </div>
+       
+  </section>
+  
+  <!-- End Hero -->

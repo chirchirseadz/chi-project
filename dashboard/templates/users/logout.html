@@ -1,0 +1,21 @@
+{% extends 'partials/base.html' %}
+{% block title %}Logout Page{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% include 'partials/navbar.html' %}
+<div class="row my-4 mt-6">
+    <div style="margin-top: 10%;"  class="col-md-6 offset-md-3 ">
+        <div class="border p-4 bg-white ">
+            <h4>Logout Page</h4>
+            <hr>
+            <div class="alert alert-danger">
+                <h5>You have been logged out</h5>
+            </div>
+            <a class="text-success" href="{% url 'landing_page' %}"> HOMEPAGE </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

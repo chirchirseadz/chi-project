@@ -1,0 +1,22 @@
+{% extends 'partials/base.html' %}
+{% block title %}terms and condition error {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% include 'partials/navbar.html' %}
+<div class="row my-4 mt-6">
+    <div style="margin-top: 10%;"  class="col-md-6 offset-md-3 ">
+        <div class="border p-4 bg-white ">
+           
+            <h4>Job Post policy</h4>
+            <hr>
+            <div class="alert alert-danger">
+                <h5>You have'nt agreed on Terms of agrement </h5>
+            </div>
+            <a class="text-success" href="{% url 'post_job' %}"> Back</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

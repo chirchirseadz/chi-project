@@ -1,0 +1,68 @@
+{% extends "partials/base.html" %}  
+{% load crispy_forms_tags %}
+
+{% block title %} Update Profile Page  {% endblock%}
+
+{% block content %}
+
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <h2 class="logo me-auto"><a href=""><span >chi</span>-SQUARE</a></h2>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+         <marquee behavior="slide" direction="left"> 
+            <span class="text-success"> Kindly </span> <span class="text-danger"> update </span><span class="text-info">your</span><span class="text-primary"> profile</span>
+              
+        </marquee>
+              
+              
+         </ul>
+      </nav>
+      <!-- .navbar -->
+  
+      <div class="header-social-links d-flex">
+        <a href="#" class="twitter"><i class="bu bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bu bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bu bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bu bi-linkedin"></i></i></a>
+      </div>
+    
+    </div>
+  
+  </header><!-- End Header -->
+  
+  
+<style>
+   
+</style>
+
+
+<div id="container" class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card">
+            <div id="top" class=" bg-success text-white">
+               User  Profile Update Form
+            </div>
+            <div class="row p-3">
+                <div class="col-md-12">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ user_update_form | crispy }}
+                        {{employee_profile_update_form | crispy}}
+                        <input type="submit" class="btn btn-success" name="submit" value="Update Profile"><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
