@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/repositories/chi-project
+    - /bin/cp -R repositories/chi-project $DEPLOYPATH
