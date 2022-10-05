@@ -40,7 +40,7 @@ DEBUG = config('DEBUG')
 
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['197.248.5.26', 'chi-squareconnections.com']
 
 # '127.0.0.1:8000', 'https//:www.chi-squareconnections.com'
 
