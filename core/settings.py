@@ -36,11 +36,12 @@ SECRET_KEY = config('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+DEBUG = False
 
 
 
-ALLOWED_HOSTS = ['197.248.5.26', 'chi-squareconnections.com']
+# ALLOWED_HOSTS = ['197.248.5.26', 'chi-squareconnections.com']
+ALLOWED_HOSTS=["*"]
 
 # '127.0.0.1:8000', 'https//:www.chi-squareconnections.com'
 
